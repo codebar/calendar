@@ -7,7 +7,7 @@ A fork-n-go Sheetsee.js calendar project! Made by me and [@muan](http://www.gith
 
 **Sheetsee.js Calendar**
 
-Sheetsee.js is a library that makes it easy to visualze data from a Google Spreadsheet. This repository expands on that by building a calendar based on events in a spreadsheet.
+Sheetsee.js is a library that makes it easy to visualize data from a Google Spreadsheet. This repository expands on that by building a calendar based on events in a spreadsheet.
 
 **Fork-n-go**
 
@@ -19,7 +19,7 @@ Here's how to get going with your version:
 
 ### 1. Create spreadsheet
 
-Create a new spreadsheet for your data on Google Docs. It should contain these headers (case and order of columns do not mattter, spelling does):
+Create a new spreadsheet for your data on Google Docs. It should contain these headers (case and order of columns do not matter, spelling does):
 
 ```
 Start Date | End Date |  Name | Location | Tickets | Contact
@@ -27,11 +27,11 @@ Start Date | End Date |  Name | Location | Tickets | Contact
 
 #### Dates
 
-Your dates should be in the `mm/dd/yyyy` format. If your day is multiple days, use both the Start and End Date columns, if it's just one day, leave End Date blank.
+Your dates should be in the `mm/dd/yyyy` format. If your event is over multiple days, use both the Start and End Date columns. If it's just one day, leave End Date blank.
 
 ### 2. Publish spreadsheet
 
-In order to fetch your spreadsheet's data you'll need to click File > Publish to the Web > Start Publishing. This just means when asked for the data in the spreadsheet, Google returns it.
+In order to fetch your spreadsheet data you'll need to click File > Publish to the Web > Start Publishing. This just means when asked for the data in the spreadsheet, Google returns it.
 
 ![publish](publish.png)
 
