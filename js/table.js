@@ -10,6 +10,12 @@ function generateCalendar (eventData) {
     appendEvent(event)
   })
 
+  renderList(eventData)
+  // $('#list-view').hide()
+  // $('#show-month-view').attr('disabled', true)
+  $('#calendar-goes-here').hide()
+  $('#show-list-view').attr('disabled', true)
+
   // Highlight today
   $('#' + formattedDate(today)).removeClass('no-event').addClass('today')
   addMonthMenu()
@@ -20,6 +26,20 @@ function addMonthMenu() {
   $('.month-table').each(function(_, table) {
     month = $(table).data('month')
     $('#cal-controls').append('<a class="month-menuitem" data-target="' + month + '" href="#' + month + '">' + month + '</a>')
+  })
+
+  $(document).on('click', '#show-month-view', function(e) {
+    $('#calendar-goes-here').show()
+    $('#list-view').hide()
+    $('#show-month-view').attr('disabled', true)
+    $('#show-list-view').attr('disabled', false)
+  })
+
+  $(document).on('click', '#show-list-view', function(e) {
+    $('#calendar-goes-here').hide()
+    $('#list-view').show()
+    $('#show-list-view').attr('disabled', true)
+    $('#show-month-view').attr('disabled', false)
   })
 
   $(document).on('click', '.month-menuitem', function(e) {

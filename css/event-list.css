@@ -1,0 +1,41 @@
+#list-view {
+  text-align: left;
+}
+
+#list-view,
+#list-view .month-name,
+#list-view  ul,
+#list-view ul li div {
+  margin: 0;
+  padding: 0;
+}
+
+#list-view .month-name {
+  margin-top: 40px;
+}
+
+#list-view  ul {
+  list-style-type: none;
+}
+
+#list-view ul li {
+  margin: 16px 0;
+  padding: 10px 0;
+  border-bottom: 1px solid #CCF4FF;
+}
+
+#list-view ul li div:first-of-type {
+  margin-bottom: 10px;
+}
+
+#list-view ul li div:last-of-type {
+  margin-top: 10px;
+}
+
+#list-view ul li .date {
+  font-weight: bold;
+}
+
+#list-view ul li .venue-tbd {
+  font-style: italic;
+}
