@@ -1,0 +1,57 @@
+header {
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+
+header h1,
+header .spacer,
+header #view-mode-buttons {
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+header #view-mode-buttons {
+  text-align: center;
+}
+
+#view-mode-buttons button {
+  appearance: none;
+  background-color: #fff;
+  border: 2px solid #ccf4ff;
+  border-radius: 0;
+  box-shadow: none;
+  color: #000;
+  display: inline-block;
+  font-family: 'Libre Baskerville', 'Baskerville', Georgia, serif;
+  font-size: 10px;
+  font-weight: bold;
+  margin: 0;
+  outline: none;
+  padding: 5px 10px;
+  text-shadow: none;
+  text-transform: uppercase;
+}
+
+#view-mode-buttons button,
+#view-mode-buttons button:focus,
+#view-mode-buttons button:hover,
+#view-mode-buttons button.hover {
+  text-shadow: none;
+}
+
+#view-mode-buttons button:hover,
+#view-mode-buttons button.hover {
+  color: #ccf4ff;
+  cursor: pointer;
+}
+
+#view-mode-buttons button:active,
+#view-mode-buttons button.active {
+  color: #000;
+  background-color: #CCF4FF;
+  cursor: default;
+}

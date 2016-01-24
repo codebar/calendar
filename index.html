@@ -8,21 +8,36 @@
     <script type="text/javascript" src="js/tabletop1.3.4.js"></script>
     <script type="text/javascript" src='js/sheetsee.js'></script>
     <script type="text/javascript" src='js/table.js'></script>
+    <script type="text/javascript" src='js/list-view.js'></script>
     <script type="text/javascript" src='js/leaflet.markercluster.js'></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/list-view.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
     <!-- Bonus NodeSchool stylesheet option! -->
     <!-- <link rel="stylesheet" type="text/css" href="css/nodeschool.css"> -->
   </head>
   <body>
 
-  <h1>codebar Events</h1>
+  <header>
+    <h1>codebar Events</h1>
+    <div id="view-mode-buttons">
+
+      <!-- start SEGMENTED BUTTONS with no space between the HTML elements -->
+      <button id="show-calendar-view">Calendar</button><button id="show-list-view">List</button>
+      <!-- end -->
+
+    </div>
+  </header>
+
   <div id="calendar-goes-here"></div>
+  <div id="list-view">
+  </div>
 
   </body>
     <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
       var URL = "0AoVbsP4gb0D9dENPM1hjdWFQbC03Ni1xclAwM0FvS2c"
-      Tabletop.init( { key: URL, callback: generateCalendar, simpleSheet: true } )
+      Tabletop.init( { key: URL, callback: generateViewsAndSetViewState, simpleSheet: true } )
     })
   </script>
 </html>
