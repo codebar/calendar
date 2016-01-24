@@ -1,8 +1,3 @@
-/* acqua #36FFA3 */
-/*light blue #CCF4FF */
-/*light gray #f9f9f9 */
-/*darker gray #aaa */
-
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -17,10 +12,9 @@ html {
 
 #list-view {
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 500px;
 }
 
-#list-view,
 #list-view .month-name,
 #list-view  ul {
   margin: 0;

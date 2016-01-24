@@ -1,5 +1,5 @@
 function generateListView(data) {
-  var listByMonths = generateListOfEventsByMont(data)
+  var listByMonths = generateListOfEventsByMonth(data)
 
   listByMonths.forEach(function(list, i) {
     var events = list[1]
@@ -32,7 +32,7 @@ function generateListView(data) {
   })
 }
 
-function generateListOfEventsByMont(events) {
+function generateListOfEventsByMonth(events) {
   var currentMonthInDigits = null
   var currentIndex = null
 
@@ -51,7 +51,7 @@ function generateListOfEventsByMont(events) {
       return ret
     }, [])
     .map(function(eventsByMonth) {
-      var monthName = getMonthName(eventsByMonth[0].startdate)
+      var monthName = getMonthAndYear(eventsByMonth[0].startdate)
       return [monthName, eventsByMonth]
     })
 }
@@ -114,7 +114,7 @@ function getDatesAsHumanReadableString(dates) {
     .join(" to ")
 }
 
-function getMonthName(date) {
+function getMonthAndYear(date) {
   return date.toLocaleString("en-us", {
     month: "long",
     year: "numeric"

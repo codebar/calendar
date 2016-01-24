@@ -1,6 +1,6 @@
 header {
   margin: 0 auto;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 header h1,
@@ -21,7 +21,7 @@ header #view-mode-buttons {
 #view-mode-buttons button {
   appearance: none;
   background-color: #fff;
-  border: 2px solid #ccf4ff;;
+  border: 2px solid #ccf4ff;
   border-radius: 0;
   box-shadow: none;
   color: #000;
@@ -43,11 +43,9 @@ header #view-mode-buttons {
   text-shadow: none;
 }
 
-
-
 #view-mode-buttons button:hover,
 #view-mode-buttons button.hover {
-  color: #aaa;
+  color: #ccf4ff;
   cursor: pointer;
 }
 
