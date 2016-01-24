@@ -1,17 +1,36 @@
+/* acqua #36FFA3 */
+/*light blue #CCF4FF */
+/*light gray #f9f9f9 */
+/*darker gray #aaa */
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
 #list-view {
-  text-align: left;
+  margin: 0 auto;
+  max-width: 600px;
 }
 
 #list-view,
 #list-view .month-name,
-#list-view  ul,
-#list-view ul li div {
+#list-view  ul {
   margin: 0;
   padding: 0;
+  text-align: left;
 }
 
 #list-view .month-name {
-  margin-top: 40px;
+  margin-top: 50px;
+  margin-bottom: 10px
 }
 
 #list-view  ul {
@@ -19,23 +38,53 @@
 }
 
 #list-view ul li {
-  margin: 16px 0;
+  margin: 0;
   padding: 10px 0;
-  border-bottom: 1px solid #CCF4FF;
+  border-bottom: 1px dotted #aaa;
 }
 
-#list-view ul li div:first-of-type {
-  margin-bottom: 10px;
+#list-view ul li div.group:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-#list-view ul li div:last-of-type {
-  margin-top: 10px;
+#list-view ul li p {
+  line-height: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
-#list-view ul li .date {
+#list-view ul li p a {
+  padding-bottom: 2px;
+}
+
+#list-view .date {
+  float: left;
   font-weight: bold;
+  margin-right: 10px;
+  border-right: 1px solid #f9f9f9;
+  padding-right: 10px;
+  max-width: 25%;
 }
 
-#list-view ul li .venue-tbd {
+#list-view .details {
+  float: left;
+  padding-left: 10px;
+  max-width: 75%;
+}
+
+#list-view .venue-tbd {
   font-style: italic;
+}
+
+@media (max-width: 600px) {
+  #list-view .details,
+  #list-view .date {
+    float: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+  }
 }

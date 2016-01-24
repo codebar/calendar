@@ -3,6 +3,12 @@ var weekdays   = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Satur
 var today  = new Date()
 var months = []
 
+function generateViewsAndSetViewState(eventData) {
+  generateCalendar(eventData)
+  showCalendarAndHideList()
+  generateListView(eventData)
+}
+
 function generateCalendar (eventData) {
   generateAllTheMonths(eventData)
 
@@ -10,15 +16,35 @@ function generateCalendar (eventData) {
     appendEvent(event)
   })
 
-  renderList(eventData)
-  // $('#list-view').hide()
-  // $('#show-month-view').attr('disabled', true)
-  $('#calendar-goes-here').hide()
-  $('#show-list-view').attr('disabled', true)
-
   // Highlight today
   $('#' + formattedDate(today)).removeClass('no-event').addClass('today')
   addMonthMenu()
+}
+
+// Display mode event handlers
+
+$(document).on('click', '#show-calendar-view', function(e) {
+  showCalendarAndHideList()
+})
+
+$(document).on('click', '#show-list-view', function(e) {
+  showListAndHideCalendar()
+})
+
+// Display mode helpers
+
+function showCalendarAndHideList() {
+  $('#calendar-goes-here').show()
+  $('#list-view').hide()
+  $('#show-calendar-view').attr('disabled', true).addClass('active')
+  $('#show-list-view').attr('disabled', false).removeClass('active')
+}
+
+function showListAndHideCalendar() {
+  $('#calendar-goes-here').hide()
+  $('#list-view').show()
+  $('#show-calendar-view').attr('disabled', false).removeClass('active')
+  $('#show-list-view').attr('disabled', true).addClass('active')
 }
 
 function addMonthMenu() {
@@ -26,20 +52,6 @@ function addMonthMenu() {
   $('.month-table').each(function(_, table) {
     month = $(table).data('month')
     $('#cal-controls').append('<a class="month-menuitem" data-target="' + month + '" href="#' + month + '">' + month + '</a>')
-  })
-
-  $(document).on('click', '#show-month-view', function(e) {
-    $('#calendar-goes-here').show()
-    $('#list-view').hide()
-    $('#show-month-view').attr('disabled', true)
-    $('#show-list-view').attr('disabled', false)
-  })
-
-  $(document).on('click', '#show-list-view', function(e) {
-    $('#calendar-goes-here').hide()
-    $('#list-view').show()
-    $('#show-list-view').attr('disabled', true)
-    $('#show-month-view').attr('disabled', false)
   })
 
   $(document).on('click', '.month-menuitem', function(e) {

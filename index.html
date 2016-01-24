@@ -12,15 +12,20 @@
     <script type="text/javascript" src='js/leaflet.markercluster.js'></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/event-list.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
     <!-- Bonus NodeSchool stylesheet option! -->
     <!-- <link rel="stylesheet" type="text/css" href="css/nodeschool.css"> -->
   </head>
   <body>
 
-  <h1>codebar Events</h1>
-  <br>
-  <button id="show-list-view">List View</button> | <button id="show-month-view">Month View</button>
-  <br>
+
+  <header>
+    <h1>codebar Events</h1>
+    <div id="view-mode-buttons">
+      <button id="show-calendar-view">Calendar</button><button id="show-list-view">List</button>
+    </div>
+  </header>
+
   <div id="calendar-goes-here"></div>
   <div id="list-view">
   </div>
@@ -29,8 +34,7 @@
     <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
       var URL = "0AoVbsP4gb0D9dENPM1hjdWFQbC03Ni1xclAwM0FvS2c"
-      // var URL = "1dBa_GLfUDgxpmXtsuKjbmaoqMLp7EFZL_KJTuxIB9uc"
-      Tabletop.init( { key: URL, callback: generateCalendar, simpleSheet: true } )
+      Tabletop.init( { key: URL, callback: generateViewsAndSetViewState, simpleSheet: true } )
     })
   </script>
 </html>
