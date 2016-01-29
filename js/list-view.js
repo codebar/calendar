@@ -51,6 +51,7 @@ function generateListOfEventsByMonth(events) {
       return ret
     }, [])
     .map(function(eventsByMonth) {
+
       var monthName = getMonthAndYear(eventsByMonth[0].startdate)
       return [monthName, eventsByMonth]
     })
@@ -101,24 +102,40 @@ function removeEventsWithNoStartDate(events) {
 }
 
 function getDatesAsHumanReadableString(dates) {
-  var locale = "en-us" // from README.md specs for date formats
-
   return dates.filter(Boolean)
     .map(function(date) {
-      return new Date(date).toLocaleString(locale, {
-        month: "short",
-        weekday: "short",
-        day: "2-digit"
-      })
+      return mapDayToDayName(date) + ", " + mapMonthToShortMonthName(date) + " " + date.getDate()
     })
     .join(" to ")
 }
 
 function getMonthAndYear(date) {
-  return date.toLocaleString("en-us", {
-    month: "long",
-    year: "numeric"
-  })
+  // grr Safari
+  var month = mapMonthToMonthName(date)
+  var year = date.getFullYear()
+  return month + " " + year
+}
+
+function mapMonthToMonthName(date) {
+  var monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+
+  return monthNames[date.getMonth()]
+}
+
+function mapMonthToShortMonthName(date) {
+  var monthNames = ["Jan", "Feb", "Mar", "April", "May", "June",
+    "July", "Aug", "Sept", "Oct", "Nov", "Dec"
+  ];
+
+  return monthNames[date.getMonth()]
+}
+
+function mapDayToDayName(date) {
+  var dayNames = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+
+  return dayNames[date.getDay()]
 }
 
 function convertDateStringsToDates(event) {
